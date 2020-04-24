@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "Number_Analyzer",
+"language": "GDScript",
+"path": "res://Prüfziffer_Rechner.gd"
+} ]
 _global_script_class_icons={
-
+"Number_Analyzer": ""
 }
 
 [application]

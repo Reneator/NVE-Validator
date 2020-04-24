@@ -1,0 +1,132 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://App_GLN.gd" type="Script" id=1]
+
+[node name="App" type="PanelContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 593.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 1006.0
+margin_bottom = 586.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+margin_right = 1006.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 109.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 109.0
+margin_bottom = 14.0
+text = "Datenbezeichner"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 109.0
+margin_bottom = 42.0
+text = "00"
+editable = false
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 113.0
+margin_right = 202.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+margin_right = 89.0
+margin_bottom = 14.0
+text = "Reserve-Ziffer"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5"]
+margin_top = 18.0
+margin_right = 89.0
+margin_bottom = 42.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 206.0
+margin_right = 346.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 140.0
+margin_bottom = 14.0
+text = "GLN"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 18.0
+margin_right = 140.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 140, 0 )
+placeholder_text = "GLN"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 350.0
+margin_right = 490.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_right = 140.0
+margin_bottom = 14.0
+text = "fortlaufende Nummer"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+margin_top = 18.0
+margin_right = 140.0
+margin_bottom = 42.0
+rect_min_size = Vector2( 140, 0 )
+placeholder_text = "fortlaufende Nummer"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 494.0
+margin_right = 552.0
+margin_bottom = 42.0
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+margin_right = 58.0
+margin_bottom = 14.0
+text = "Prüfziffer"
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+margin_top = 18.0
+margin_right = 58.0
+margin_bottom = 42.0
+editable = false
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 1010.0
+margin_right = 1010.0
+margin_bottom = 586.0
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/LineEdit" method="_on_LineEdit_focus_entered"]
+[connection signal="focus_exited" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/LineEdit" method="_on_LineEdit_focus_exited"]
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/LineEdit" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5/LineEdit" method="_on_LineEdit_focus_entered"]
+[connection signal="focus_exited" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5/LineEdit" method="_on_LineEdit_focus_exited"]
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5/LineEdit" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer5/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit" method="_on_LineEdit_focus_entered"]
+[connection signal="focus_exited" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit" method="_on_LineEdit_focus_exited"]
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/LineEdit" method="_on_LineEdit_focus_entered"]
+[connection signal="focus_exited" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/LineEdit" method="_on_LineEdit_focus_exited"]
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/LineEdit" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="focus_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/LineEdit" method="_on_LineEdit_focus_entered"]
+[connection signal="focus_exited" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/LineEdit" method="_on_LineEdit_focus_exited"]
+[connection signal="text_changed" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/LineEdit" to="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/LineEdit" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/LineEdit" to="." method="_on_LineEdit_text_entered"]
