@@ -49,14 +49,14 @@ margin_bottom = 42.0
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_right = 140.0
 margin_bottom = 14.0
-text = "GLN"
+text = "GS1"
 
 [node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_top = 18.0
 margin_right = 140.0
 margin_bottom = 42.0
 rect_min_size = Vector2( 140, 0 )
-placeholder_text = "GLN"
+placeholder_text = "GS1"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 257.0
