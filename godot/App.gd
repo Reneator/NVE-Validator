@@ -34,7 +34,7 @@ func validate_nve(nve: String, check_digit: String):
 		gen_check_digit = calculate_check_digit(nve)
 		
 	
-	if gen_check_digit:
+	if gen_check_digit != null:
 		create_nve_entity(nve, gen_check_digit)
 	else:
 		create_nve_entity(nve, check_digit)
