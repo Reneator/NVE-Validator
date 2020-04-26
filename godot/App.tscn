@@ -58,13 +58,19 @@ margin_right = 1010.0
 margin_bottom = 24.0
 text = "Prüfen"
 
-[node name="Response_Label" type="Label" parent="VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer"]
 margin_top = 46.0
 margin_right = 1010.0
-margin_bottom = 60.0
+margin_bottom = 70.0
+text = "Java Backend nutzen"
+
+[node name="Response_Label" type="Label" parent="VBoxContainer"]
+margin_top = 74.0
+margin_right = 1010.0
+margin_bottom = 88.0
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
-margin_top = 64.0
+margin_top = 92.0
 margin_right = 1010.0
 margin_bottom = 586.0
 size_flags_vertical = 3
@@ -73,7 +79,7 @@ custom_styles/panel = SubResource( 1 )
 [node name="Entity_List" type="VBoxContainer" parent="VBoxContainer/PanelContainer"]
 margin_top = 2.0
 margin_right = 1010.0
-margin_bottom = 522.0
+margin_bottom = 494.0
 
 [node name="Label" type="RichTextLabel" parent="VBoxContainer/PanelContainer/Entity_List"]
 margin_right = 1010.0
@@ -82,9 +88,12 @@ rect_min_size = Vector2( 0, 20 )
 bbcode_enabled = true
 bbcode_text = "[u]gespeicherte NVEs:[/u]"
 text = "gespeicherte NVEs:"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 [connection signal="focus_entered" from="VBoxContainer/HBoxContainer/LineEdit" to="VBoxContainer/HBoxContainer/LineEdit" method="_on_LineEdit_focus_entered"]
 [connection signal="focus_exited" from="VBoxContainer/HBoxContainer/LineEdit" to="VBoxContainer/HBoxContainer/LineEdit" method="_on_LineEdit_focus_exited"]
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/LineEdit" to="VBoxContainer/HBoxContainer/LineEdit" method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
 [connection signal="text_entered" from="VBoxContainer/HBoxContainer/LineEdit2" to="." method="_on_LineEdit2_text_entered"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

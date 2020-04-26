@@ -106,4 +106,25 @@ func _on_LineEdit_text_entered(new_text):
 func check_input():
 	var nve = $VBoxContainer/HBoxContainer/LineEdit.text
 	var check_digit = $VBoxContainer/HBoxContainer/LineEdit2.text
-	validate_nve(nve, check_digit)
+	var use_java_backend = $VBoxContainer/CheckBox.pressed
+	if use_java_backend:
+		validate_with_java_backend(nve, check_digit)
+	else:
+		validate_nve(nve, check_digit)
+
+func validate_with_java_backend(nve, check_digit):
+	var query = JSON.print({"nve": nve, "checkDigit": check_digit})
+	var headers = ["Content-Type: application/json"]
+	$HTTPRequest.request("http://127.0.0.1:8080/validatebody",headers, false, HTTPClient.METHOD_POST, query)
+
+func _on_HTTPRequest_request_completed(result, response_code, headers, body):
+	var json = JSON.parse(body.get_string_from_utf8())
+	var body_dict = json.result
+	var error_message = body_dict.get("errorMessage")
+	if error_message:
+		print_error_text(error_message)
+		return
+	var nve = body_dict.get("nummerVersandEinheit")
+	var check_digit = body_dict.get("checkDigit")
+	create_nve_entity(nve, check_digit)
+	
