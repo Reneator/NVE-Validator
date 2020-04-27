@@ -20,6 +20,7 @@ public class DataController {
         String nve = requestBody.get("nve");
         String checkDigit = requestBody.get("checkDigit");
         Response response = NveValidator.validateNVE(nve, checkDigit);
+        System.out.println(response);
         return response;
 //        return null;
     }

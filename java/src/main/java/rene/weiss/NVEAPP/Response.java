@@ -1,5 +1,6 @@
 package rene.weiss.NVEAPP;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,6 +15,10 @@ public class Response {
     private String errorMessage;
     private String nummerVersandEinheit; //only nve without checkDigit
     private String checkDigit; // only checkDigit
-    private String nVE; //nve including checkDigit
+    private String nve;
+    @JsonGetter
+    public String getNve(){
+        return nummerVersandEinheit + checkDigit;
+    }
 
 }
