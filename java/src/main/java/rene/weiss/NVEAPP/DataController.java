@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 @RestController
+@CrossOrigin
 public class DataController {
 
 
@@ -16,12 +17,16 @@ public class DataController {
     }
 
     @PostMapping(path = "/validatebody")
+//    public Response validateNveBody(@RequestBody Object requestBody) {
     public Response validateNveBody(@RequestBody Map<String, String> requestBody) {
+        System.out.println("Request: " + requestBody);
         String nve = requestBody.get("nve");
         String checkDigit = requestBody.get("checkDigit");
         Response response = NveValidator.validateNVE(nve, checkDigit);
         System.out.println(response);
         return response;
+
+
 //        return null;
     }
 
